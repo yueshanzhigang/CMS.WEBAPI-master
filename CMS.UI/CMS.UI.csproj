@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Mall\**" />
+    <Content Remove="Controllers\Mall\**" />
+    <EmbeddedResource Remove="Controllers\Mall\**" />
+    <None Remove="Controllers\Mall\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="log4net" Version="2.0.8" />
@@ -24,10 +31,6 @@
     <ProjectReference Include="..\CMS.Models\CMS.Models.csproj" />
     <ProjectReference Include="..\CMS.Repository\CMS.Repository.csproj" />
     <ProjectReference Include="..\CMS.Services\CMS.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\Mall\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
