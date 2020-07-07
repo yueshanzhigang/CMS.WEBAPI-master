@@ -8,6 +8,7 @@ using CMS.IServices;
 using CMS.Models;
 using CMS.UI.MultipartRequest;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace CMS.UI.Controllers
 {
+    [EnableCors("any")]
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]

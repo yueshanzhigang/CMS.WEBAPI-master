@@ -7,11 +7,13 @@ using CMS.IServices.System;
 using CMS.Models.System;
 using CMS.Models.ViewModel.SystemViewModel;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMS.UI.Controllers
 {
+    [EnableCors("any")]
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Policy = "Permission")]

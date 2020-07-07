@@ -37,6 +37,20 @@ namespace CMS.UI
             //注册HttpContext在Controller以外的地方使用
             services.AddHttpContextAccessor();
 
+            #region cors 跨域
+            //添加cors 服务 配置跨域处理            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("any", builder =>
+                {
+                    builder.AllowAnyOrigin() //允许任何来源的主机访问
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();//指定处理cookie
+                });
+            });
+            #endregion
+
             #region 启用JWT认证 授权
 
             #region 读取配置
@@ -124,6 +138,8 @@ namespace CMS.UI
                     c.RoutePrefix = ""; //路径配置，设置为空，去launchSettings.json把launchUrl去掉
                 });
             }
+
+            app.UseCors("any");
 
             app.UseRouting();
 
